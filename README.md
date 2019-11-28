@@ -14,11 +14,9 @@ Match1=np.zeros((n))
 Rang1=np.zeros((n))
 
 def crear_matriu_inicial(n):
-    Matrix=np.zeros((n,n))
     for i in range(0,n):
         for j in range(0,n):
             Matrix[i][j]=j
-
     for i in range(0,n):
         #Rand1=suffels*n
         for j in range(0,n):
@@ -33,7 +31,6 @@ def crear_matriu_inicial(n):
     return Matrix
 
 def Match_Rang_creation(Boys, Girls, n):
-
     for i in range(0,n):
         k = int(Boys[i][1])
         for q in range(0,n):
@@ -41,14 +38,10 @@ def Match_Rang_creation(Boys, Girls, n):
             if(w == i):
                 Match[i]=k
                 Rang[i]=q+1
-
-def totes_diferents(V, n):
     
 
 def comparar(Boys, Girls, n):
-    
     Match_Rang_creation(Boys, Girls, n)
-    
     for j in range(0,n-1):
         for i in range(0,n):
             r=i+1
@@ -68,7 +61,6 @@ def main():
     Girls=crear_matriu_inicial(n)
     #print(Boys)
     #print(Girls)
-    
     comparar(Boys, Girls, n)
     print(Rang)
     print(Match)
