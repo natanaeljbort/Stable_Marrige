@@ -16,6 +16,7 @@ Boys=np.zeros((n,n))
 Girls=np.zeros((n,n))
 Match=np.zeros((n))
 Rang=np.zeros((n))
+Repeat=np.zeros((n))
 Match1=np.zeros((n))
 Rang1=np.zeros((n))
 
@@ -48,30 +49,59 @@ def Match_Rang_creation(Boys, Girls, n):
                 Match[i]=k
                 Rang[i]=q+1
 
+def totes_diferents(V, n):
+    k=0
+    for i in range(0,n):
+        r=i+1
+        for j in range(r,n):
+            if(V[i]==V[j]):
+                k=1
+                return 1
+                break
+        if(k==1):
+            break
+def Rango(Girls, n, girl, boy):
+    for j in range(0,n):
+        if(Girls[boy][j]==girl):
+            return j
+
+def zero_repeat(n):
+    for i in range(0,n):
+        Repeat[i]=0
+
 def comparar(Boys, Girls, n):
     
     Match_Rang_creation(Boys, Girls, n)
     
     for j in range(0,n-1):
+        h=totes_diferents(Match, n)
+        if(h!=1):
+            break
+        zero_repeat(n)        
         for i in range(0,n):
-            r=i+1
-            for g in range(r,n):
-                if(Match[i]==Match[g]):
-                    if(Rang[i]<Rang[g]):
-                        Match1[g]=Boys[i][j+1]
-                    else:
-                        Match1[i]=Boys[i][j+1]
-                else:
-                    Match1[i]=Match[i]
-                    
+            for g in range(0,n):
+                if(g==i or Repeat[g]==1):
+                    continue
+                elif(Match[i]==Match[g]):
+                    if(Rang[i]>Rang[g]):
+                        Match[i]=Boys[i][j+1]
+                        Rang[i]=Rango(Girls, n, int(Match[i]), i)
+                        Repeat[i]=1
+                        break
+
+    return Match
 def main():
     Boys=crear_matriu_inicial(n)
     Girls=crear_matriu_inicial(n)
-    #print(Boys)
-    #print(Girls)
+    print(Boys)
+    print(Girls)
     
-    comparar(Boys, Girls, n)
+    
+    Match=comparar(Boys, Girls, n)
     print(Rang)
     print(Match)
+    
+    
 main()
+
 
