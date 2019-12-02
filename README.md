@@ -19,10 +19,10 @@ Making the lists into arrays
 TeamListArray = np.asarray(NBA_Team_List)
 PlayerListArray = np.asarray(Players_List)
 ```
-Notice that the converted lists become 5 x 6 arrays.
+Then Specifying the size of the array in this case 5 x 6.
 ```python
-Print(TeamListArray)
-Print(PlayerListArray)
+Teams = np.reshape(TeamListArray, (5,6))
+Players = np.reshape(PlayerListArray, (5,6))
 ```
 
 # References
