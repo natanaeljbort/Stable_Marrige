@@ -15,6 +15,14 @@ Players_List = ['Athony Edwards', 'James Wiseman', 'Jaden McDaniels', 'Cole Anth
 ```
 
 
+```python
+
+TeamListArray = np.asarray(NBA_Team_List)
+PlayerListArray = np.asarray(Players_List)
+
+```
+
+
 # References
 <p> [1] D. Gale and L.S. Shapley (1962). College Admissions and the Stability of Marriage <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<i> Source: The American Mathematical Monthly (pages 9-15) </i> Published by: Mathematical Association of America, Retrieved from: https://www.kaggle.com/datasnaek/youtube-new </p>
