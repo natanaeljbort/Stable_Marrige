@@ -68,7 +68,6 @@ def comparar(Boys, Girls, n):
             break      
         for i in range(0,n):
             for g in range(0,n):
-                print(Match)
                 if(g==i):
                     continue
                 elif(Match[i]==Match[g] and Rang[i]>Rang[g]):
