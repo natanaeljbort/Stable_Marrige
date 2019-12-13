@@ -80,6 +80,7 @@ def comparar(Boys, Girls, n):
                     break
     return Match
 #Main function.
+    # New version of stable marige
 def main():
     Boys=crear_matriu_inicial(n)
     Girls=crear_matriu_inicial(n)
