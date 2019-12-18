@@ -22,7 +22,6 @@ def crear_matriu_inicial(n):
     for i in range(0,n):
         for j in range(0,n):
             Matrix[i][j]=j
-
     for i in range(0,n):
         for j in range(0,n):
             Rand2=int((n-1)*ra.random())
@@ -33,6 +32,7 @@ def crear_matriu_inicial(n):
     for i in range(0,n):
         for j in range(0,n):
             Matrix[i][j]=Matrix[i][j]
+            
     return Matrix
 
 #Function that creates the initial Match and Rang vectors, which will be modified as the algorithm progresses.
