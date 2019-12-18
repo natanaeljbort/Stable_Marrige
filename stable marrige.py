@@ -7,12 +7,14 @@ Created on Wed Nov 27 15:37:24 2019
 import numpy as np
 import random as ra
 
-n=10
+n=100
 Boys=np.zeros((n,n))
 Girls=np.zeros((n,n))
 Match=np.zeros((n))
+M=np.zeros((n))
 Rang=np.zeros((n))
 Repeat=np.zeros((n))
+contador=np.zeros((n))
 
 #Function that creates random matrices in order to have initial testing data .
 def crear_matriu_inicial(n):
@@ -60,8 +62,14 @@ def Rango(Girls, n, girl, boy):
     for j in range(0,n):
         if(Girls[girl][j]==boy):
             return j
-#Function that finds the solution given the two initial matrices of boys and girls. This is done by modifying the Match ang Rang vector 
-#by comparing between the preferences of all the boys and girls.
+
+def Contador(Match, n, contador):
+    for j in range(0,n):
+        k=int(Match[j]);
+        contador[k]=contador[k]+1;
+    #print(contador);
+    
+#Function that finds the solution given the two initial matrices of boys and girls. This is done by modifying the Match ang Rang vector by comparing between the preferences of all the boys and girls.
 def comparar(Boys, Girls, n):
     
     Match_Rang_creation(Boys, Girls, n)
@@ -78,14 +86,50 @@ def comparar(Boys, Girls, n):
                     Match[i]=Boys[i][j+1]
                     Rang[i]=Rango(Girls, n, int(Match[i]), i)
                     break
+
+def ultimes_parelles(contador, Match, Rango, n):
+    h=totes_diferents(Match, n)
+    tiazero=0
+    tiados=0
+    tio1=0
+    tio2=0
+    if h==1:
+        Contador(Match, n, contador)
+        for j in range(0,n):
+            if contador[j]==2:
+                tiados=j
+            elif contador[j]==0:
+                tiazero=j
+        for j in range(0,n):
+            if Match[j]==tiados:
+                tio1=j
+                break
+        for j in range(tio1,n):
+            if Match[j]==tiados:
+                tio2=j
+        if Rang[tio1]>Rang[tio2]:
+            Match[tio2]=tiazero
+        elif Rang[tio1]<Rang[tio2]:
+            Match[tio1]=tiazero
+         
     return Match
 #Main function.
     # New version of stable marige
 def main():
     Boys=crear_matriu_inicial(n)
+    print("\n The preference matix for the boys is:")
+    print(Boys)
+    print("\n The preference matix for the girls is:") 
     Girls=crear_matriu_inicial(n)
-    Match=comparar(Boys, Girls, n)
+    print(Girls)   
+    comparar(Boys, Girls, n)
+    M=ultimes_parelles(contador, Match, Rango, n)
+    print("\n The rang vector is: ")
     print(Rang)
-    print(Match)
+    print("\n The Match vector is: ")
+    print(M)
+    h=totes_diferents(Match, n)
+    print(h)
+    
     
 main()
