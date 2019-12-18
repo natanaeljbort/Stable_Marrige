@@ -1,7 +1,7 @@
 """
 Created on Wed Nov 27 15:37:24 2019
 
-@author: natanael
+@author: Natanael
 """
 
 import numpy as np
@@ -92,10 +92,7 @@ def comparar(Boys, Girls, n):
 #With the 'comparar' function it may happen that two boys pair the same girl and one girl my be left unpaired (in the last step), this function solves this problem by pairing the most diaired girl with the better ranked boy and the other boy goes with the unpaired girl.
 def ultimes_parelles(contador, Match, Rango, n):
     h=totes_diferents(Match, n)
-    tiazero=0
-    tiados=0
-    tio1=0
-    tio2=0
+    tiazero=0; tiados=0; tio1=0; tio2=0
     if h==1:
         Contador(Match, n, contador)
         for j in range(0,n):
