@@ -45,6 +45,7 @@ def Match_Rang_creation(Boys, Girls, n):
             if(w == i):
                 Match[i]=k
                 Rang[i]=q
+                
 #Function that tells us when the solution is found (everybody has a different partner).
 def totes_diferents(V, n):
     k=0
@@ -57,17 +58,18 @@ def totes_diferents(V, n):
                 break
         if(k==1):
             break
+        
 #Function that tells us the rang that a boy has for a given girl.
 def Rango(Girls, n, girl, boy):
     for j in range(0,n):
         if(Girls[girl][j]==boy):
             return j
 
+#Function that creates a vector wich tells us with how many boys a girl is paired.
 def Contador(Match, n, contador):
     for j in range(0,n):
         k=int(Match[j]);
         contador[k]=contador[k]+1;
-    #print(contador);
     
 #Function that finds the solution given the two initial matrices of boys and girls. This is done by modifying the Match ang Rang vector by comparing between the preferences of all the boys and girls.
 def comparar(Boys, Girls, n):
@@ -87,7 +89,7 @@ def comparar(Boys, Girls, n):
                     Rang[i]=Rango(Girls, n, int(Match[i]), i)
                     break
 
-#With the 'comparar' function it may happen that two boys pair the same girl and one girl my be left unpaired (in the last step), this function solves this problem by pairing the most diaired girl with the better ranked boy and the other boy goes with the unpaired girl
+#With the 'comparar' function it may happen that two boys pair the same girl and one girl my be left unpaired (in the last step), this function solves this problem by pairing the most diaired girl with the better ranked boy and the other boy goes with the unpaired girl.
 def ultimes_parelles(contador, Match, Rango, n):
     h=totes_diferents(Match, n)
     tiazero=0
@@ -114,8 +116,8 @@ def ultimes_parelles(contador, Match, Rango, n):
             Match[tio1]=tiazero
          
     return Match
+
 #Main function.
-    # New version of stable marige
 def main():
     Boys=crear_matriu_inicial(n)
     print("\n The preference matix for the boys is:")
