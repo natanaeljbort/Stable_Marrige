@@ -87,6 +87,7 @@ def comparar(Boys, Girls, n):
                     Rang[i]=Rango(Girls, n, int(Match[i]), i)
                     break
 
+#With the 'comparar' function it may happen that two boys pair the same girl and one girl my be left unpaired (in the last step), this function solves this problem by pairing the most diaired girl with the better ranked boy and the other boy goes with the unpaired girl
 def ultimes_parelles(contador, Match, Rango, n):
     h=totes_diferents(Match, n)
     tiazero=0
@@ -127,9 +128,6 @@ def main():
     print("\n The rang vector is: ")
     print(Rang)
     print("\n The Match vector is: ")
-    print(M)
-    h=totes_diferents(Match, n)
-    print(h)
-    
+    print(M)    
     
 main()
