@@ -7,9 +7,9 @@ Created on Wed Nov 27 15:37:24 2019
 import numpy as np
 import random as ra
 
-n=100
-Boys=np.zeros((n,n))
-Girls=np.zeros((n,n))
+n=30
+Teams=np.zeros((n,n))
+Players=np.zeros((n,n))
 Match=np.zeros((n))
 M=np.zeros((n))
 Rang=np.zeros((n))
@@ -36,12 +36,12 @@ def crear_matriu_inicial(n):
     return Matrix
 
 #Function that creates the initial Match and Rang vectors, which will be modified as the algorithm progresses.
-def Match_Rang_creation(Boys, Girls, n):
+def Match_Rang_creation(Teams, Players, n):
 
     for i in range(0,n):
-        k = int(Boys[i][0])
+        k = int(Teams[i][0])
         for q in range(0,n):
-            w = int(Girls[k][q])
+            w = int(Players[k][q])
             if(w == i):
                 Match[i]=k
                 Rang[i]=q
@@ -59,22 +59,22 @@ def totes_diferents(V, n):
         if(k==1):
             break
         
-#Function that tells us the rang that a boy has for a given girl.
-def Rango(Girls, n, girl, boy):
+#Function that tells us the rang that a team has for a given player.
+def Rango(Players, n, player, team):
     for j in range(0,n):
-        if(Girls[girl][j]==boy):
+        if(Players[player][j]==team):
             return j
 
-#Function that creates a vector wich tells us with how many boys a girl is paired.
+#Function that creates a vector wich tells us with how many Teams a player is paired with.
 def Contador(Match, n, contador):
     for j in range(0,n):
         k=int(Match[j]);
         contador[k]=contador[k]+1;
     
-#Function that finds the solution given the two initial matrices of boys and girls. This is done by modifying the Match ang Rang vector by comparing between the preferences of all the boys and girls.
-def comparar(Boys, Girls, n):
+#Function that finds the solution given the two initial matrices of Teams and Players. This is done by modifying the Match ang Rang vector by comparing between the preferences of all the Teams and Players.
+def comparar(Teams, Players, n):
     
-    Match_Rang_creation(Boys, Girls, n)
+    Match_Rang_creation(Teams, Players, n)
     
     for j in range(0,n-1):
         h=totes_diferents(Match, n)
@@ -85,11 +85,11 @@ def comparar(Boys, Girls, n):
                 if(g==i):
                     continue
                 elif(Match[i]==Match[g] and Rang[i]>Rang[g]):
-                    Match[i]=Boys[i][j+1]
-                    Rang[i]=Rango(Girls, n, int(Match[i]), i)
+                    Match[i]=Teams[i][j+1]
+                    Rang[i]=Rango(Players, n, int(Match[i]), i)
                     break
 
-#With the 'comparar' function it may happen that two boys pair the same girl and one girl my be left unpaired (in the last step), this function solves this problem by pairing the most diaired girl with the better ranked boy and the other boy goes with the unpaired girl.
+#With the 'comparar' function it may happen that two Teams pair the same player and one player my be left unpaired (in the last step), this function solves this problem by pairing the most desired player with the better ranked team and the other team goes with the unpaired player.
 def ultimes_parelles(contador, Match, Rango, n):
     h=totes_diferents(Match, n)
     tiazero=0; tiados=0; tio1=0; tio2=0
@@ -116,13 +116,13 @@ def ultimes_parelles(contador, Match, Rango, n):
 
 #Main function.
 def main():
-    Boys=crear_matriu_inicial(n)
-    print("\n The preference matix for the boys is:")
-    print(Boys)
-    print("\n The preference matix for the girls is:") 
-    Girls=crear_matriu_inicial(n)
-    print(Girls)   
-    comparar(Boys, Girls, n)
+    Teams=crear_matriu_inicial(n)
+    print("\n The preference matix for the teams is:")
+    print(Teams)
+    print("\n The preference matix for the players is:") 
+    Players=crear_matriu_inicial(n)
+    print(Players)   
+    comparar(Teams, Players, n)
     M=ultimes_parelles(contador, Match, Rango, n)
     print("\n The rang vector is: ")
     print(Rang)
