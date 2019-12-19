@@ -7,13 +7,15 @@ Created on Wed Nov 27 15:37:24 2019
 import numpy as np
 import random as ra
 
-n=30
+n=29
 Teams=np.zeros((n,n))
 Players=np.zeros((n,n))
 Match=np.zeros((n))
 M=np.zeros((n))
 Rang=np.zeros((n))
 contador=np.zeros((n))
+NBA_Team_List = ['1 New York Knicks', '2 Cleveland Cavs', '3 Phoenix Suns','4 Chicago Bulls','5 Atlanta Hawks','6 Washington Wizards', '7 New_Orleans Pelicans','8 Memphis Grizzlies','9 Dallas Mavs','10 Minnesota Timberwolves''11 LA Lakes','12 Charlotte Hornets', '13 Miami Heat', '14 Sacrameto Kings', '15 Detroit Pistons', '16 Orlando Magic', '17 Brooklyn Nets', '18 Indiana Pacers', '19 San Antonio Spurs', '20 LA Clippers', '21 Oklahoma City', '22 Boston Celtics', '23 Utah Jazz', '24 Philadelphia Sixers', '25 Portland Blazzers', '26 Houston Rockets', '27 Denver Nuggets', '28 GoldenState Warriors', '29 Toronto Raptors', '30 Milwaukee Bucks']
+Players_List = ['Athony Edwards', 'James Wiseman', 'Jaden McDaniels', 'Cole Anthony', 'LaMelo Ball', 'Vernon Carey', 'Theo Maledon', 'Deni Avdija', 'Nico Mannion', 'Obi Toppin', 'Isaiah Stewart', 'NFaly Dante', 'Zeke Nnaji', 'Tyrese Haliburton', 'Killian Hayes', 'Ochai Agbaji', 'Bryan Antoine', 'Onyeka Okongwu', 'Precious Achiuwa', 'Tyrese Maxey', 'RJ Hampton', 'Jordan Nwora', 'Aaron Henry', 'Steve Enoch', 'Charles Bassey', 'Omer Yurtseven', 'Ashton Hagans', 'Jay Scrubb', 'Tyler Bey', 'Jalen Smith']
 
 #Function that creates random matrices in order to have initial testing data .
 def crear_matriu_inicial(n):
@@ -113,6 +115,7 @@ def ultimes_parelles(contador, Match, Rango, n):
          
     return Match
 
+
 #Main function.
 def main():
     Teams=crear_matriu_inicial(n)
@@ -122,10 +125,19 @@ def main():
     Players=crear_matriu_inicial(n)
     print(Players)   
     comparar(Teams, Players, n)
-    M=ultimes_parelles(contador, Match, Rango, n)
+    M=(ultimes_parelles(contador, Match, Rango, n))
     print("\n The rang vector is: ")
     print(Rang)
     print("\n The Match vector is: ")
-    print(M)    
+    print(M)  
+    print("\n \n")
+    print("########The Matches Of The NBA Draft Of 2020########")
+    print("\n \n")
+    for i in range(0,n):
+        print(NBA_Team_List[i]) 
+        print("matched with")
+        print(Players_List[int(M[i])])
+        print("\n")
+        
     
 main()
