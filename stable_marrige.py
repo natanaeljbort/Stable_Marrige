@@ -13,7 +13,6 @@ Players=np.zeros((n,n))
 Match=np.zeros((n))
 M=np.zeros((n))
 Rang=np.zeros((n))
-Repeat=np.zeros((n))
 contador=np.zeros((n))
 
 #Function that creates random matrices in order to have initial testing data .
