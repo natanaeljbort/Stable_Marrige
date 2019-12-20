@@ -51,7 +51,7 @@ TeamChoices['1 New York Knicks']
 
 __Results___ 
 * Only Showing first few rows.
-
+```
 The prefered pick for each team:
   1 New York Knicks have the following players on their list ['Vernon Carey', 'NFaly Dante', 'NFaly Dante']
   10 Minnesota Timberwolves have the following players on their list ['RJ Hampton', 'Isaiah Stewart', 'LaMelo Ball']
@@ -65,8 +65,7 @@ Players dream desitantions:
 ('Aaron Henry', 'Zeke Nnaji', 'Tyrese Maxey') Would like to get draftd to -> 23 Utah Jazz,
 ('Charles Bassey', 'Obi Toppin', 'Jalen Smith') Would like to get draftd to -> 26 Houston Rockets,
 ('Deni Avdija', 'Charles Bassey', 'Athony Edwards') Would like to get draftd to -> 7 New_Orleans Pelicans,
-
-
+```
 
 # References
 <p> [1] D. Gale and L.S. Shapley (1962). College Admissions and the Stability of Marriage <br>
