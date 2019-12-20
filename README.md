@@ -41,13 +41,13 @@ seen in Appendix 4.1).
 If the developer is using jupyter notebook to dynamically check if the code is working 
 they can simple check the values assigned to each key as below.
 
-"""python
+```python
 # Dynamically checking for a desired player's choices
 PlayerChoices['Jalen Smith']
 
 #Dynamically checking for a team's choices
 TeamChoices['1 New York Knicks']
-"""
+```
 
 __Results___ 
 * Only Showing first few rows.
