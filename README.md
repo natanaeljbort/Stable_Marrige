@@ -27,6 +27,47 @@ Players = np.reshape(PlayerListArray, (5,6))
 
 As we don't know the preferences of each team and each player, in our code we have created random preferences for each, in the form of a matrix. Each team would be described by a number, for example: New York Knicks its given number 0 (the index they occupay in the vector ```NBA_Team_List```), and so on. In the case of the players this is the same, each player is described by the index of the ```Players_List``` vector. So initially two random matrices are created, one for the team preferences and another for the players preferences. This matrices are created by the function "crear_matriu_inicial". Following this the code creates two vectors one is the 'Match' vector and the other the 'Rang' vector. The 'Match' vector stores the pairs of team-player in a given iteration, the index of the vector, represents the team number and the value of the 'Match' vector in that index the player that is matched with. The 'Rang' vector tells us the position in a players rank  that the team that is matched with him has. This is stored in the following way, a given team is the index, while the value that the vector has in this index, is the position of the team in the matched player's rank. Using this two vectors, comparisons are done, first with the first preference of the teams, then with the second, and so on. So matches and comparisons with the rank are done according to the present matches. Matches are changed according to the theory of the algorithm, the better ranked a team is in the players particular rank, the more probable that player will end up in that team. The algorithm finish when all the matches are different (everybody has a different partner). At the end of the program, the matches are printed in the form of the 'Match' vector, the 'Rang' vector and the assignments of each team to the player is also printed.
 
+
+### Section 3.3 Seble Draft Picks - Alternative
+
+Implementing Match making algorithms such as stabble-marriage or the stabble roomate can be easier implemented 
+using imported libraries such Pandas. This Library removes the need to create a function that creates random 
+matrices. Pandas allows developers to access the dictionaries as key value pairs and to skip directly to checking 
+for the stability of each key value pair. Furthermore, since Pandas is portable. The size of the data or 
+ramdom variables selection can be dynamically altered without having to do so in the actual function. The above, 
+NBA_Team_List and Players_List are the same as implemeted in original stable marriage implentation (section 3.1 with code 
+seen in Appendix 4.1). 
+
+If the developer is using jupyter notebook to dynamically check if the code is working 
+they can simple check the values assigned to each key as below.
+
+"""python
+# Dynamically checking for a desired player's choices
+PlayerChoices['Jalen Smith']
+
+#Dynamically checking for a team's choices
+TeamChoices['1 New York Knicks']
+"""
+
+__Results___ 
+* Only Showing first few rows.
+
+The prefered pick for each team:
+  1 New York Knicks have the following players on their list ['Vernon Carey', 'NFaly Dante', 'NFaly Dante']
+  10 Minnesota Timberwolves have the following players on their list ['RJ Hampton', 'Isaiah Stewart', 'LaMelo Ball']
+  11 LA Lakes have the following players on their list ['Aaron Henry', 'Vernon Carey', 'Tyler Bey']
+  12 Charlotte Hornets have the following players on their list ['Theo Maledon', 'Omer Yurtseven', 'Obi Toppin']
+  13 Miami Heat have the following players on their list ['Ochai Agbaji', 'Tyrese Haliburton', 'Killian Hayes']
+
+Players dream desitantions:
+('Aaron Henry', 'Isaiah Stewart', 'Jordan Nwora') Would like to get draftd to -> 14 Sacrameto Kings,
+('Aaron Henry', 'Vernon Carey', 'Tyler Bey') Would like to get draftd to -> 11 LA Lakes,
+('Aaron Henry', 'Zeke Nnaji', 'Tyrese Maxey') Would like to get draftd to -> 23 Utah Jazz,
+('Charles Bassey', 'Obi Toppin', 'Jalen Smith') Would like to get draftd to -> 26 Houston Rockets,
+('Deni Avdija', 'Charles Bassey', 'Athony Edwards') Would like to get draftd to -> 7 New_Orleans Pelicans,
+
+
+
 # References
 <p> [1] D. Gale and L.S. Shapley (1962). College Admissions and the Stability of Marriage <br>
 &nbsp;&nbsp;&nbsp;&nbsp;<i> Source: The American Mathematical Monthly (pages 9-15) </i> Published by: Mathematical Association of America, Retrieved from: https://www.kaggle.com/datasnaek/youtube-new </p>
