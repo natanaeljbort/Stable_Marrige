@@ -8,7 +8,8 @@ In this project we will use the real world example of the NBA Draft. For those u
   
 ```python
 
-NBA_Team_List = ['1 New York Knicks', '2 Cleveland Cavs', '3 Phoenix Suns','4 Chicago Bulls','5 Atlanta Hawks','6 Washington Wizards', '7 New_Orleans Pelicans','8 Memphis Grizzlies','9 Dallas Mavs','10 Minnesota Timberwolves''11 LA Lakes','12 Charlotte Hornets', '13 Miami Heat', '14 Sacrameto Kings', '15 Detroit Pistons', '16 Orlando Magic', '17 Brooklyn Nets', '18 Indiana Pacers', '19 San Antonio Spurs', '20 LA Clippers', '21 Oklahoma City', '22 Boston Celtics', '23 Utah Jazz', '24 Philadelphia Sixers', '25 Portland Blazzers', '26 Houston Rockets', '27 Denver Nuggets', '28 GoldenState Warriors', '29 Toronto Raptors', '30 Milwaukee Bucks']
+NBA_Team_List = ['1 New York Knicks', '2 Cleveland Cavs', '3 Phoenix Suns','4 Chicago Bulls','5 Atlanta Hawks','6 Washington Wizards',
+'7 New_Orleans Pelicans','8 Memphis Grizzlies','9 Dallas Mavs','10 Minnesota Timberwolves','11 LA Lakes','12 Charlotte Hornets', '13 Miami Heat', '14 Sacrameto Kings', '15 Detroit Pistons', '16 Orlando Magic', '17 Brooklyn Nets', '18 Indiana Pacers', '19 San Antonio Spurs', '20 LA Clippers', '21 Oklahoma City', '22 Boston Celtics', '23 Utah Jazz', '24 Philadelphia Sixers', '25 Portland Blazzers', '26 Houston Rockets', '27 Denver Nuggets', '28 GoldenState Warriors', '29 Toronto Raptors', '30 Milwaukee Bucks']
  
 Players_List = ['Athony Edwards', 'James Wiseman', 'Jaden McDaniels', 'Cole Anthony', 'LaMelo Ball', 'Vernon Carey', 'Theo Maledon', 'Deni Avdija', 'Nico Mannion', 'Obi Toppin', 'Isaiah Stewart', 'NFaly Dante', 'Zeke Nnaji', 'Tyrese Haliburton', 'Killian Hayes', 'Ochai Agbaji', 'Bryan Antoine', 'Onyeka Okongwu', 'Precious Achiuwa', 'Tyrese Maxey', 'RJ Hampton', 'Jordan Nwora', 'Aaron Henry', 'Steve Enoch', 'Charles Bassey', 'Omer Yurtseven', 'Ashton Hagans', 'Jay Scrubb', 'Tyler Bey', 'Jalen Smith']
 
@@ -41,6 +42,7 @@ seen in Appendix 4.1).
 If the developer is using jupyter notebook to dynamically check if the code is working 
 they can simple check the values assigned to each key as below.
 
+Input:
 ```python
 # Dynamically checking for a desired player's choices
 PlayerChoices['Jalen Smith']
@@ -48,16 +50,21 @@ PlayerChoices['Jalen Smith']
 #Dynamically checking for a team's choices
 TeamChoices['1 New York Knicks']
 ```
+Output:
+```
+[['9 Dallas Mavs', '9 Dallas Mavs', '16 Orlando Magic']]
+[['Vernon Carey', 'NFaly Dante', 'NFaly Dante']]
+```
 
 __Results___ 
 * Only Showing first few rows.
 ```
 The prefered pick for each team:
-  1 New York Knicks have the following players on their list ['Vernon Carey', 'NFaly Dante', 'NFaly Dante']
-  10 Minnesota Timberwolves have the following players on their list ['RJ Hampton', 'Isaiah Stewart', 'LaMelo Ball']
-  11 LA Lakes have the following players on their list ['Aaron Henry', 'Vernon Carey', 'Tyler Bey']
-  12 Charlotte Hornets have the following players on their list ['Theo Maledon', 'Omer Yurtseven', 'Obi Toppin']
-  13 Miami Heat have the following players on their list ['Ochai Agbaji', 'Tyrese Haliburton', 'Killian Hayes']
+1 New York Knicks have the following players on their list ['Vernon Carey', 'NFaly Dante', 'NFaly Dante']
+10 Minnesota Timberwolves have the following players on their list ['RJ Hampton', 'Isaiah Stewart', 'LaMelo Ball']
+11 LA Lakes have the following players on their list ['Aaron Henry', 'Vernon Carey', 'Tyler Bey']
+12 Charlotte Hornets have the following players on their list ['Theo Maledon', 'Omer Yurtseven', 'Obi Toppin']
+13 Miami Heat have the following players on their list ['Ochai Agbaji', 'Tyrese Haliburton', 'Killian Hayes']
 
 Players dream desitantions:
 ('Aaron Henry', 'Isaiah Stewart', 'Jordan Nwora') Would like to get draftd to -> 14 Sacrameto Kings,
